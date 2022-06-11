@@ -44,6 +44,8 @@
 #include <stdio.h>
 #endif
 
+#pragma managed(push, off)
+
 namespace tbb {
 
 namespace interface5 {
@@ -1526,5 +1528,5 @@ inline void swap(concurrent_hash_map<Key, T, HashCompare, A> &a, concurrent_hash
 #endif // warning 4127 is back
 
 } // namespace tbb
-
+#pragma managed(pop)
 #endif /* __TBB_concurrent_hash_map_H */

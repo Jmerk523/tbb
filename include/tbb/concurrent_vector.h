@@ -56,7 +56,7 @@
 #endif
     #pragma warning (disable: 4127) //warning C4127: conditional expression is constant
 #endif
-
+#pragma managed(push, off)
 namespace tbb {
 
 template<typename T, class A = cache_aligned_allocator<T> >
@@ -1374,7 +1374,7 @@ inline void swap(concurrent_vector<T, A> &a, concurrent_vector<T, A> &b)
 {    a.swap( b ); }
 
 } // namespace tbb
-
+#pragma managed(pop)
 #if defined(_MSC_VER) && !defined(__INTEL_COMPILER)
     #pragma warning (pop)
 #endif // warning 4267,4127 are back
